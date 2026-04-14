@@ -218,7 +218,7 @@ function MessageBubble({ message }: { message: Message }) {
               : "bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-800 rounded-tl-sm shadow-sm"
           }`}
         >
-          <div className="text-sm whitespace-pre-wrap">{message.content}</div>
+          <MessageContent text={message.content} />
         </div>
 
         {/* Sources */}
@@ -232,6 +232,50 @@ function MessageBubble({ message }: { message: Message }) {
       </div>
     </div>
   );
+}
+
+function MessageContent({ text }: { text: string }) {
+  return (
+    <div className="text-sm whitespace-pre-wrap">
+      {parseMarkdown(text)}
+    </div>
+  );
+}
+
+function parseMarkdown(text: string): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  const regex = /(\*\*([\s\S]+?)\*\*|\*([\s\S]+?)\*)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(text.slice(lastIndex, match.index));
+    }
+
+    if (match[2] !== undefined) {
+      nodes.push(
+        <strong key={`md-${key++}`}>
+          {match[2]}
+        </strong>
+      );
+    } else if (match[3] !== undefined) {
+      nodes.push(
+        <em key={`md-${key++}`}>
+          {match[3]}
+        </em>
+      );
+    }
+
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+
+  return nodes;
 }
 
 // Source Badge Component

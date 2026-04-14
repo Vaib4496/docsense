@@ -2,8 +2,8 @@
 
 A RAG (Retrieval-Augmented Generation) powered document intelligence platform built with Next.js 16. Chat with your PDFs using AI-powered semantic search.
 
-[![Loom Video](https://img.shields.io/badge/Loom-Video-625df5?style=for-the-badge&logo=loom)](YOUR_LOOM_VIDEO_LINK_HERE)
-[![Vercel](https://img.shields.io/badge/Vercel-Live-000000?style=for-the-badge&logo=vercel)](YOUR_VERCEL_DEPLOYMENT_LINK_HERE)
+[![Loom Video](https://img.shields.io/badge/Loom-Video-625df5?style=for-the-badge&logo=loom)](https://www.loom.com/share/99899970fec343fe925124427a1ca928)
+[![Vercel](https://img.shields.io/badge/Vercel-Live-000000?style=for-the-badge&logo=vercel)](https://docsense-swart.vercel.app/)
 
 ---
 
