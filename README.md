@@ -270,13 +270,13 @@ Don't forget to add your environment variables in the Vercel dashboard after dep
 
 Watch the full demo on Loom:
 
-**[View Demo Video](YOUR_LOOM_VIDEO_LINK_HERE)**
+**[View Demo Video](https://www.loom.com/share/99899970fec343fe925124427a1ca928)**
 
 ### Live Demo
 
 Try the live application:
 
-**[Live Demo](YOUR_VERCEL_DEPLOYMENT_LINK_HERE)**
+**[Live Demo](https://docsense-swart.vercel.app/)**
 
 ---
 
